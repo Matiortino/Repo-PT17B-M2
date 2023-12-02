@@ -61,6 +61,9 @@ function buildToDo(todo, index) {
   }
   
   toDoShell.appendChild(toDoText);
+  toDoText.addEventListener("click", function(){
+    buildToDo();
+  });
   return toDoShell;
 }
 
@@ -138,7 +141,8 @@ addButton.addEventListener("click", addToDo);
 function completeToDo(event) {
   // DESCOMENTAR LA SIGUIENTE LINEA
   const index = event.target.id;
-
+  completeToDo(index);
+  displayToDos();
   // Tu código acá:
 }
 
